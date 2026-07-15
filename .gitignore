@@ -65,3 +65,7 @@ c2rust-analyze/c2rust_analysis_tests_minimal-*
 # Debug info dumps
 /dumps
 c2rust-transpile/dumps
+
+# Nix build output symlinks
+/result
+/result-*

@@ -69,6 +69,13 @@
               src = ./.;
               doCheck = false; # Can use checkFlags to disable specific tests
 
+              # Build only the `c2rust` transpiler binary. The full workspace
+              # includes the legacy `c2rust-refactor` crate, whose build script
+              # execs `gen/process_ast.py` (shebang `#!/usr/bin/env -S uv run`);
+              # `/usr/bin/env` is absent in the pure build sandbox, so that
+              # crate fails to build. `c2rust` does not depend on it.
+              cargoBuildFlags = [ "-p" "c2rust" ];
+
               patches = [ ./nix-tinycbor-cmake.patch ];
 
               nativeBuildInputs = with pkgs; [
