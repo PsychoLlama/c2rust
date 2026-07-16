@@ -12,6 +12,15 @@
 
 <!-- ANCHOR: intro -->
 
+## Patches on this Fork
+
+- Fixes Nix compilation issues and performance and makes it callable as a flake.
+- `99b44da49`: Support `usize` / `isize` in `FieldType`. (Fixes an error when transpiling neovim's source.)
+
+```bash
+nix run 'github:PsychoLlama/c2rust#' -- --help
+```
+
 ## Intro
 
 C2Rust helps you migrate C99-compliant code to Rust.
