@@ -16,6 +16,7 @@
 
 - Fixes Nix compilation issues and performance and makes it callable as a flake.
 - `99b44da49`: Support `usize` / `isize` in `FieldType`. (Fixes an error when transpiling neovim's source.)
+- Removes git submodule test corpus so cargo doesn't struggle so much installing `c2rust-bitfields`.
 
 ```bash
 nix run 'github:PsychoLlama/c2rust#' -- --help
